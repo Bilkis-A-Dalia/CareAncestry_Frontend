@@ -121,8 +121,11 @@ const loadPatientId = () => {
     .then((data) => {
       localStorage.setItem("patient_id", data[0].id);
     });
+  if (localStorage.getItem("user_id")) {
+    loadPatientId();
+  }
 };
 
-loadPatientId();
+
 getparams();
 loadTime();

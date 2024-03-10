@@ -65,8 +65,21 @@ const handleLogin = (event) => {
         if (data.token && data.user_id) {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);
+          localStorage.setItem("user_name", username);
           window.location.href = "index.html";
         }
       });
   }
 };
+
+const display_user_name = () => {
+  const username = localStorage.getItem("user_name");
+
+  if (username) {
+    const user_msg = document.getElementById('u_name');
+    user_msg.innerHTML = `Hi, ${username}`;
+  }
+};
+
+
+display_user_name();

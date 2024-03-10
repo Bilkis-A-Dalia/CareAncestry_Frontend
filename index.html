@@ -14,6 +14,21 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/65edf1159131ed19d97796ba/1hoknbg1a";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </head>
   <body>
     <header>
@@ -41,16 +56,26 @@
               class="dropdown-menu dropdown-menu-dark"
               aria-labelledby="dropdownMenuButton2"
             >
-              <li><a class="dropdown-item active" href="userDetails.html">Profile</a></li>
-              <li><a class="dropdown-item" href="allAppointments.html">All Appointment</a></li>
-              <li onclick="handlelogOut()"><a class="dropdown-item" href="#">Logout</a></li>
+              <li>
+                <a class="dropdown-item active" href="userDetails.html"
+                  >Profile</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="allAppointments.html"
+                  >All Appointment</a
+                >
+              </li>
+              <li onclick="handlelogOut()">
+                <a class="dropdown-item" href="#">Logout</a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
       <div class="banner-container">
-        <h3>I am Dalia</h3>
+        <h3 id="u_name"></h3>
         <div class="banner">
           <div class="banner-left">
             <h1>
@@ -228,6 +253,7 @@
 
     <!-- add script file  -->
     <script src="./app.js"></script>
+    <script src="./auth.js"></script>
     <script src="./docDetails.js"></script>
     <script src="./logout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.0/html2pdf.bundle.min.js"></script>

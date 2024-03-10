@@ -11,8 +11,7 @@ const loadUserDetails = () => {
           <img src="./Images/man-1.jpg" alt="" />
         </div>
         <div class="user-info">
-          <h1>${data.username}</h1>
-          <h3>${data.first_name + data.last_name}</h3>
+          <h1>${data.user}</h1>
           <h3>${data.email}</h3>
         </div>
           `;
