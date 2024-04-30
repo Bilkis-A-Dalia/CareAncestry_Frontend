@@ -6,6 +6,7 @@ const handleRegistration = (event) => {
   const email = getValue("email");
   const password = getValue("password");
   const confirm_password = getValue("confirm_password");
+
   const info = {
     username,
     first_name,
@@ -16,35 +17,29 @@ const handleRegistration = (event) => {
   };
 
   if (password === confirm_password) {
-    document.getElementById("error").innerText = "";
+    document.getElementById("error").innerHTML = "";
     if (
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
         password
       )
     ) {
-      console.log(info);
-
-      fetch("https://careancestry.onrender.com/patient/register/", {
+      // console.log(info);
+      fetch("https://careancestry.onrender.com/patient/register", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(info),
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
     } else {
-      document.getElementById("error").innerText =
-        "pass must contain eight characters, at least one letter, one number and one special character:";
+      document.getElementById("error").innerHTML =
+        "password must contain letters and numbers and symbol";
     }
   } else {
-    document.getElementById("error").innerText =
-      "password and confirm password do not match";
+    document.getElementById("error").innerHTML =
+      "Password and confirm password does not match";
     alert("password and confirm password do not match");
   }
-};
-
-const getValue = (id) => {
-  const value = document.getElementById(id).value;
-  return value;
 };
 
 const handleLogin = (event) => {
@@ -76,10 +71,9 @@ const display_user_name = () => {
   const username = localStorage.getItem("user_name");
 
   if (username) {
-    const user_msg = document.getElementById('u_name');
+    const user_msg = document.getElementById("u_name");
     user_msg.innerHTML = `Hi, ${username}`;
   }
 };
-
 
 display_user_name();

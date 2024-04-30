@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Images/logo.png" />
     <title>Detail</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
@@ -19,17 +20,78 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="d-flex justify-content-around align-items-center p-4">
-      <div class="logo-container d-flex align-items-center gap-2">
-        <img src="./Images/stethoscope 1.png" alt="" />
-        <h3>SmartCare</h3>
-      </div>
-      <div class="menu-container d-flex gap-3">
-        <li class="menu">Home</li>
-        <li class="menu">Services</li>
-        <li class="menu">Contact us</li>
-        <li class="menu">Login</li>
-      </div>
+    <!-- navbar  -->
+      <nav class="navbar navbar-expand-lg navbar-light" id="home">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">
+            <img
+              src="./Images/stethoscope 1.png"
+              alt="CareAncestry Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+            />
+            CareAncestry
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" target="_blank">Login</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profile
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="userDetails.html">Profile</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="allAppointments.html"
+                      >All Appointments</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="handlelogOut()"
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
     </nav>
 
     <div id="doc-details"></div>

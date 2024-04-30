@@ -25,7 +25,6 @@ const displayService = (services) => {
                   <p class="card-text">
                     ${service.description.slice(0, 140)}
                   </p>
-                  <a href="#" class="btn btn-primary">Details</a>
                 </div>
               </div>
       `;
@@ -56,35 +55,73 @@ const loadDoctors = (search) => {
 };
 
 const displyDoctors = (doctors) => {
+  const parent = document.getElementById("doctors");
+
+  // Clear previous content
+  parent.innerHTML = "";
+
+  // Create a grid container
+  const gridContainer = document.createElement("div");
+  gridContainer.classList.add("row", "row-cols-1", "row-cols-md-2", "g-4"); // Added "g-4" class to create a 1rem gap between columns
+
   doctors?.forEach((doctor) => {
-    // console.log(doctor);
-    const parent = document.getElementById("doctors");
+    // Create a column for each doctor
+    const col = document.createElement("div");
+    col.classList.add("col", "mb-4"); // Added "mb-4" class to create a 1rem margin bottom for each column
+
+    // Create a card for the doctor
     const div = document.createElement("div");
-    div.classList.add("doc-card");
+    div.classList.add("card", "doc-card");
+    div.style.height = "100%"; // Set card height to 100%
+
     div.innerHTML = `
-        <img class="doc-img" src=${doctor.image} alt="" />
-              <h4>${doctor?.user}</h4>
-              <h6>${doctor?.designation[0]}</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                numquam!
-              </p>
-             
-              <p>
-              
-              ${doctor?.specialization?.map((item) => {
-                return `<button>${item}</button>`;
-              })}
-              </p>
+      <div class="card-body d-flex flex-column justify-content-between"> <!-- Align items in a column -->
+        <img class="doc-img card-img-top mx-auto d-block" src=${
+          doctor.image
+        } alt="" /> <!-- Center the image -->
+        <div>
+          <h4 class="card-title text-center mt-3">${
+            doctor?.user
+          }</h4> <!-- Center the title -->
+          <h6 class="card-subtitle text-center">${
+            doctor?.designation[0]
+          }</h6> <!-- Center the subtitle -->
+          <p class="card-text mt-3">
+            ${
+              doctor.profession ? doctor.profession : "Doctor of Medicine"
+            } <!-- Replace lorem ipsum with text related to their profession -->
+          </p>
+          <div class="specializations text-center mb-3"> <!-- Center the buttons and add margin bottom -->
+            ${doctor?.specialization
+              ?.map(
+                (item) =>
+                  `<button class="btn btn-primary me-2">${item}</button>`
+              )
+              .join("")}
+          </div>
+        </div>
+        <div class="text-center"> <!-- Center the button -->
+          <a href="docDetails.html?doctorId=${
+            doctor.id
+          }" class="doc-detail-btn" style="text-decoration: none;">Details</a>
+        </div>
+      </div>
+    `;
 
-              <button > <a target="_blank" href="docDetails.html?doctorId=${
-                doctor.id
-              }">Details</a> </button>
-        `;
+    // Append the card to the column
+    col.appendChild(div);
 
-    parent.appendChild(div);
+    // Append the column to the grid container
+    gridContainer.appendChild(col);
   });
+
+  // Append the grid container to the parent
+  parent.appendChild(gridContainer);
 };
+
+
+
+
 
 const loadDesignation = () => {
   fetch("https://careancestry.onrender.com/doctor/designation/")

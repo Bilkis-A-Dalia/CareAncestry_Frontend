@@ -8,7 +8,7 @@ li{
     list-style: none;
 }
 nav{
-    background-color: aqua;
+    background-color: rgb(120, 37, 184);
 }
 .menu{
     font-size: 20px;
@@ -29,12 +29,13 @@ nav{
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(cyan, rgba(255,255,255));
+    background: linear-gradient(rgb(174, 37, 242), rgba(255,255,255));
     box-shadow: 4px 4px 8px gray;
     border-radius: 10px;
 }
 .bn-img{
     width: 320px;
+    height: 500px;
     margin-top: -50px;
 }
 .service-container{
@@ -44,7 +45,7 @@ nav{
 }
 .title{
     font-size: 44px;
-    color: aqua;
+    color: rgb(174, 37, 242);
     text-align: center;
 }
 .doctors-container{
@@ -90,7 +91,7 @@ nav{
 }
 footer{
     padding: 50px;
-    background: linear-gradient(rgb(211, 238, 238), rgb(114, 215, 214));
+    background: linear-gradient(rgb(211, 238, 238), rgb(174, 37, 242));
 }
 .doctor-img img{
     width: 150px;
@@ -147,3 +148,38 @@ footer{
     margin: 20px;
     border: none;
 }
+
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Custom CSS for navbar */
+.navbar-brand img {
+  margin-right: 5px;
+}
+
+.navbar-nav .nav-link {
+  color: #f0ecec; /* Change link color */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f8f8; /* Change link hover color */
+}
+
+.dropdown-menu-dark {
+  background-color: #7335B1; /* Change dropdown background color */
+}
+
+.dropdown-menu-dark .dropdown-item {
+  color: #ffffff; /* Change dropdown item color */
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: #007bff; /* Change dropdown item hover color */
+}
+
+.btn{
+    background-color: #7335B1;
+}
+ 

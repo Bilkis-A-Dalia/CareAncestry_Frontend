@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Images/logo.png" />
     <title>Hospital</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -14,6 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
@@ -32,105 +34,132 @@
   </head>
   <body>
     <header>
-      <nav class="d-flex justify-content-around align-items-center p-4">
-        <div class="logo-container d-flex align-items-center">
-          <img src="./Images/stethoscope 1.png" alt="" />
-          <h3>SmartCare</h3>
-        </div>
-        <div class="menu-container d-flex gap-3">
-          <li class="menu"><a href="index.html"></a></li>
-          <li class="menu">Services</li>
-          <li class="menu">Contact Us</li>
-          <li class="menu"><a target="_blank" href="login.html">Login</a></li>
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton2"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Profile
-            </button>
-            <ul
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="dropdownMenuButton2"
-            >
-              <li>
-                <a class="dropdown-item active" href="userDetails.html"
-                  >Profile</a
-                >
+      <!-- navbar  -->
+      <nav class="navbar navbar-expand-lg navbar-light" id="home">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">
+            <img
+              src="./Images/stethoscope 1.png"
+              alt="CareAncestry Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+            />
+            CareAncestry
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#service">Services</a>
               </li>
-              <li>
-                <a class="dropdown-item" href="allAppointments.html"
-                  >All Appointment</a
-                >
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
               </li>
-              <li onclick="handlelogOut()">
-                <a class="dropdown-item" href="#">Logout</a>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" target="_blank">Login</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profile
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="userDetails.html">Profile</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="allAppointments.html"
+                      >All Appointments</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="handlelogOut()"
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div class="banner-container">
-        <h3 id="u_name"></h3>
-        <div class="banner">
-          <div class="banner-left">
-            <h1>
-              Providing Quality <br />
-              healthCare
-            </h1>
-            <p class="w-50 m-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Necessitatibus minima odio corrupti accusamus voluptate quos
-              accusantium. Inventore similique doloremque modi aliquam. Officiis
-              nemo maxime quidem reprehenderit, voluptates et commodi quisquam.
-            </p>
-          </div>
-          <div class="banner-img">
-            <img class="bn-img" src="./Images/doc.png" alt="" />
-          </div>
-        </div>
-      </div>
+
+      <!-- banner  -->
+<div class="banner-container p-3" style="padding: 20px 0;">
+  <h3 id="u_name" class="text-center mb-4">Welcome</h3>
+  <div class="banner row">
+    <div class="banner-left col-md-6 col-sm-12">
+      <h1 style="font-size: 2.5rem;">
+        Providing Quality <br />
+        Healthcare
+      </h1>
+      <p class="w-100 mx-auto" style="font-size: 1rem;">
+        Welcome to CareAncestry, your trusted healthcare provider. Our mission
+        is to deliver high-quality healthcare services with compassion and
+        excellence. With our team of experienced professionals, we strive to
+        ensure your well-being and provide personalized care tailored to your
+        needs.
+      </p>
+    </div>
+    <div class="banner-img col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+      <img class="bn-img img-fluid" src="./Images/doc.png" alt="Doctor">
+    </div>
+  </div>
+</div>
+
+
     </header>
 
     <main>
       <!-- services  -->
+      <section id='service'>
       <div class="service-container text-center">
-        <h1 class="title">Service we provide</h1>
+        <h1 class="title">Services We Provide</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-          unde.
+          At CareAncestry, we offer a wide range of healthcare services designed to meet the diverse needs of our clients. From preventive care to specialized treatments, our dedicated team of professionals is committed to delivering compassionate and personalized care to every individual we serve. Whether you're seeking routine check-ups, diagnostic evaluations, or ongoing management of chronic conditions, we're here to support you on your journey to better health and well-being.
         </p>
-        <div
-          class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein"
-        >
-          <ul id="service-container" class="slider-container py-4">
-            <li class=""></li>
-          </ul>
+        <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
+    <ul class="slider-container py-4" id="service-container">
+        
+    </ul>
 
-          <button
-            type="button"
-            class="slider-nav"
-            aria-label="Go left"
-          ></button>
-          <button
-            type="button"
-            class="slider-nav slider-nav-next"
-            aria-label="Go left"
-          ></button>
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
 
-          <div class="slider-indicators">
-            <button class="" aria-label="Go to slide"></button>
-            <button aria-label="Go to slide" class=""></button>
-            <button aria-label="Go to slide" class="active"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-          </div>
-        </div>
+    <div class="slider-indicators">
+        <button class="active" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide"></button>
+    </div>
+</div>
       </div>
+      </section>
 
       <!-- all doctor sector  -->
       <div class="doctors-container row d-flex justify-content-center">
@@ -168,7 +197,7 @@
             ></ul>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
           <input id="search" type="text" placeholder="search..." />
           <button onclick="handleSearch()">Search</button>
           <div id="doctors" class="doctors mt-5"></div>
@@ -183,84 +212,111 @@
 
       <!-- all reviews  -->
       <div class="review-container p-3 mt-5 w-75 m-auto">
-        <h1 class="title">Clients review about us</h1>
-        <p class="description text-center w-50m-auto">
-          Lorem ipsum dolor sit amet consectetur,<br />
-          adipisicing elit. Saepe, culpa!
-        </p>
-        <div class="reviews">
-          <div
-            class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein"
-          >
+    <h1 class="title">Clients Review</h1>
+    <p class="description text-center w-75 m-auto">
+        Hear what our clients have to say about their experience with CareAncestry.
+    </p>
+    <div class="reviews">
+        <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
             <ul id="review-container" class="slider-container py-4">
-              <li class=""></li>
+                <!-- Add your review items here -->
+                <li class=""></li>
             </ul>
 
-            <button
-              type="button"
-              class="slider-nav"
-              aria-label="Go left"
-            ></button>
-            <button
-              type="button"
-              class="slider-nav slider-nav-next"
-              aria-label="Go left"
-            ></button>
+            <button type="button" class="slider-nav" aria-label="Go left"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
 
             <div class="slider-indicators">
-              <button class="" aria-label="Go to slide"></button>
-              <button aria-label="Go to slide" class=""></button>
-              <button aria-label="Go to slide" class="active"></button>
-              <button aria-label="Go to slide"></button>
-              <button aria-label="Go to slide"></button>
+                <button class="" aria-label="Go to slide"></button>
+                <button aria-label="Go to slide" class=""></button>
+                <button aria-label="Go to slide" class="active"></button>
+                <button aria-label="Go to slide"></button>
+                <button aria-label="Go to slide"></button>
             </div>
-          </div>
         </div>
-      </div>
-    </main>
-    <p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.8487407994426!2d91.82597734566173!3d22.3593395273185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89d35894a2d%3A0xd634c480c373a8db!2sChittagong%20Medical%20College%20Hospital%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1710095380622!5m2!1sen!2sbd"
-        width="1800"
-        height="600"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </p>
+    </div>
+</div>
 
-    <footer class="p-5">
-      <div class="container w-75 m-auto row p-5">
-        <div class="col-md-6">
-          <p><small>Copyrights o Smartcare.All rights reserved</small></p>
-          <h5>Follow Us</h5>
-          <div class="icons">
-            <img class="icon" src="./Images/LinkedIn.png" alt="" />
-            <img class="icon" src="./Images/YouTube.png" alt="" />
-            <img class="icon" src="./Images/LinkedIn.png" alt="" />
-          </div>
+    </main>
+
+
+    <!-- contact us  -->
+    <section id="contact">
+    <div class="container">
+      <h1 class=" title mt-5 mb-4 text-center">Contact Us</h1>
+      <p class="text-center">Have questions or inquiries? Reach out to us using the form below.</p>
+
+      <!-- Contact Form -->
+      <form>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
         </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Culture</li>
-          <li>Blog</li>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
         </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Culture</li>
-          <li>Blog</li>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
+      </form>
+    </div>
+    </section>
+    <br>
+    
+    <div style="overflow:hidden; padding-bottom:56.25%; position:relative; height:0;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.8487407994426!2d91.82597734566173!3d22.3593395273185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89d35894a2d%3A0xd634c480c373a8db!2sChittagong%20Medical%20College%20Hospital%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1710095380622!5m2!1sen!2sbd" 
+  width="100%" 
+  height="100%" 
+  style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+<!-- footer  -->
+<footer class="p-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <h5>Follow Us</h5>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/bilkis-akter-dalia" target="_blank"><img class="icon" src="./Images/LinkedIn.png" alt="LinkedIn" style="width: 30px; margin-right: 5px;" /></a>
+          <a href="https://www.youtube.com/" target="_blank"><img class="icon" src="./Images/YouTube.png" alt="YouTube" style="width: 30px; margin-right: 5px;" /></a>
+          <a href="https://twitter.com/?lang=en" target="_blank"><img class="icon" src="./Images/Twitter.png" alt="Twitter" style="width: 30px; margin-right: 5px;" /></a>
         </div>
       </div>
-      <hr />
-      <p class="text-center mt-3">
-        <small>Copyrights o Smartcare.All rights reserved</small>
-      </p>
-    </footer>
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h5>Company</h5>
+        <ul class="list-unstyled">
+        
+            <li><a href="about.html" style="text-decoration: none; color: black;">About</a></li>
+            <li><a href="#contact" style="text-decoration: none; color: black;">Contact Us</a></li>
+            <li><a href="#home" style="text-decoration: none; color: black;">Home</a></li>
+            <li><a href="#service" style="text-decoration: none; color: black;">Services</a></li>
+        
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>More</h5>
+        <ul class="list-unstyled">
+          <i class="bi bi-envelope-at-fill"> bilkisadalia@gmail.com</i><br>
+          <i class="bi bi-telephone"> 01881309149</i><br>
+          <i class="bi bi-whatsapp"> 01881309149</i><br>
+          <i class="bi bi-skype"> bilkisadalia@gmail.com</i>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <p class="text-center mt-3 mb-0"><small>© CareAncestry. All rights reserved</small></p>
+</footer>
+
+
 
     <!-- add script file  -->
     <script src="./app.js"></script>

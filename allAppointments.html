@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./Images/logo.png" />
     <title>All Appointments</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
@@ -20,39 +21,75 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <nav class="d-flex justify-content-around align-items-center p-4">
-      <div class="logo-container d-flex align-items-center gap-2">
-        <img src="./Images/stethoscope 1.png" alt="" />
-        <h3>SmartCare</h3>
-      </div>
-      <div class="menu-container d-flex gap-3">
-        <li class="menu"><a href="index.html"></a></li>
-        <li class="menu">Services</li>
-        <li class="menu">Contact us</li>
-        <div class="dropdown">
+    <!-- navbar  -->
+      <nav class="navbar navbar-expand-lg navbar-light" id="home">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">
+            <img
+              src="./Images/stethoscope 1.png"
+              alt="CareAncestry Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+            />
+            CareAncestry
+          </a>
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="navbar-toggler"
             type="button"
-            id="dropdownMenuButton2"
-            data-bs-toggle="dropdown"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            profile
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <ul
-            class="dropdown-menu dropdown-menu-dark"
-            aria-labelledby="dropdownMenuButton2"
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
           >
-            <li>
-              <a class="dropdown-item active" href="userDetails.html"
-                >profile</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="#">all Appointment</a></li>
-            <li><a class="dropdown-item" href="#">logout</a></li>
-          </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" target="_blank">Login</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profile
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="userDetails.html">Profile</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="allAppointments.html"
+                      >All Appointments</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="handlelogOut()"
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
     </nav>
 
     <div class="all-appointment-container">
@@ -74,37 +111,43 @@
       </table>
     </div>
 
-    <footer class="p-5">
-      <div class="container w-75 m-auto row p-5">
-        <div class="col-md-6">
-          <p><small>Copyright © Smartcare. All Rights Reserved</small></p>
-          <h5>Follow US</h5>
-          <div class="icons">
-            <img class="icon" src="./Images/LinkedIn.png" alt="" />
-            <img class="icon" src="./Images/YouTube.png" alt="" />
-            <img class="icon" src="./Images/LinkedIn.png" alt="" />
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>ABout</li>
-          <li>Contact us</li>
-          <li>Culture</li>
-          <li>Blog</li>
-        </div>
-        <div class="col-md-3">
-          <h5>Company</h5>
-          <li>ABout</li>
-          <li>Contact us</li>
-          <li>Culture</li>
-          <li>Blog</li>
+    <!-- footer  -->
+<footer class="p-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <h5>Follow Us</h5>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/bilkis-akter-dalia" target="_blank"><img class="icon" src="./Images/LinkedIn.png" alt="LinkedIn" style="width: 30px; margin-right: 5px;" /></a>
+          <a href="https://www.youtube.com/" target="_blank"><img class="icon" src="./Images/YouTube.png" alt="YouTube" style="width: 30px; margin-right: 5px;" /></a>
+          <a href="https://twitter.com/?lang=en" target="_blank"><img class="icon" src="./Images/Twitter.png" alt="Twitter" style="width: 30px; margin-right: 5px;" /></a>
         </div>
       </div>
-      <hr />
-      <p class="text-center mt-3">
-        <small>Copyright © Smartcare. All Rights Reserved</small>
-      </p>
-    </footer>
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h5>Company</h5>
+        <ul class="list-unstyled">
+        
+            <li><a href="about.html" style="text-decoration: none; color: black;">About</a></li>
+            <li><a href="#contact" style="text-decoration: none; color: black;">Contact Us</a></li>
+            <li><a href="index.html" style="text-decoration: none; color: black;">Home</a></li>
+            <li><a href="#service" style="text-decoration: none; color: black;">Services</a></li>
+        
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>More</h5>
+        <ul class="list-unstyled">
+          <i class="bi bi-envelope-at-fill"> bilkisadalia@gmail.com</i><br>
+          <i class="bi bi-telephone"> 01881309149</i><br>
+          <i class="bi bi-whatsapp"> 01881309149</i><br>
+          <i class="bi bi-skype"> bilkisadalia@gmail.com</i>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <p class="text-center mt-3 mb-0"><small>© CareAncestry. All rights reserved</small></p>
+</footer>
     <!-- script tag from here  -->
     <script src="./app.js"></script>
     <script src="./auth.js"></script>

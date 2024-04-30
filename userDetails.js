@@ -12,6 +12,7 @@ const loadUserDetails = () => {
         </div>
         <div class="user-info">
           <h1>${data.user}</h1>
+          <h4>${data.first_name}</h4>
           <h3>${data.email}</h3>
         </div>
           `;
